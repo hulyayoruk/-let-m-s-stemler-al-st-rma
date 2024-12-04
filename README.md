@@ -8,7 +8,7 @@
 #include <sys/wait.h> 
 #include <unistd.h>
 
-int main{
+int main {
 int pid;
 pid=fork();
 if(pid<0){
@@ -28,7 +28,7 @@ if(pid<0){
           }
           }
 return 0;
-
+}
 
  İKİNCİ ALIŞTIRMA:
 
