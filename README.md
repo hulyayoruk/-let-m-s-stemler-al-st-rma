@@ -13,7 +13,7 @@ int pid;
 pid=fork();
 if(pid<0){
              //error
-}
+             }
    if(pid==0){
              //child
       execlp("cat", "cat", "dosya.txt", NULL);
@@ -83,14 +83,14 @@ return 0;
 void create_file() {  
      int fd = open("example.txt");  
     close(fd);  
-    exit(0);  
+  exit(0);  
     }  
 
 void write_file() {  
      int fd = open("example.txt");  
     write(fd, "Bu bir test mesajıdır.\n", );  
     close(fd);  
-    exit(0);  
+  exit(0);  
     }  
 
   void read_file() {  
@@ -99,7 +99,7 @@ void write_file() {
      int n = read(fd, buffer, sizeof(buffer));  
     write(tekrar, buffer, n);  
     close(fd);  
-    exit(0);  
+  exit(0);  
     }  
 int main() {  
     int pid, pid1, pid2;  
