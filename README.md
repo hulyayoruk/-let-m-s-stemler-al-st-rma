@@ -21,7 +21,7 @@ int main {
         int status;  
         waitpid(pid, &status, 0);  
         if (WİFEXITED(status)) {  
-            printf("çıkış durumu: %d \n", WEXItSTATUS(status));  
+            printf("çıkış durumu: %d \n", WEXITSTATUS(status));  
         }  
     }  
     return 0;  
