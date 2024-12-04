@@ -9,12 +9,12 @@
 #include <unistd.h>
 
 int main{
-     int pid;
-     pid=fork();
-    if(pid<0){
+int pid;
+pid=fork();
+if(pid<0){
              //error
 }
-    if(pid==0){
+   if(pid==0){
              //child
       execlp("cat", "cat", "dosya.txt", NULL);
       perror("exec hatası");
@@ -25,7 +25,7 @@ int main{
         waitpid(pid, &status, 0);
         if (WİFEXITED(status)){
           printf("çıkış durumu: %d \n", WEXItSTATUS(status));
-}
+          }
           }
 return 0;
 
@@ -44,27 +44,29 @@ int main{
      pid=fork();
      if(pid<0){
              //error
-}
+             }
     if(pid==0){
              //child
       FILE *file = fopen("dosya.txt", "r");  
         if (file == NULL) {  
             printf("Dosya açılamadı, abort() çağrılıyor.\n");  
             abort(); 
-        } else {  
+            } else {  
             printf("Dosya başarıyla açıldı.\n");  
             fclose(file);  
             exit(0); 
-        }  
-    } else { // Parent process  
+            }  
+            } 
+            else {  
         int status;  
         waitpid(pid, &status, 0);
         if (WIFEXITED(status)) {  
             printf("Child process, normal çıkış yaptı. Çıkış durumu: %d\n", WEXITSTATUS(status));  
-        } else if (WIFSIGNALED(status)) {  
+            } 
+        else (WIFSIGNALED(status)) {  
             printf("Child process, bir sinyal ile sonlandırıldı. Sinyal numarası: %d\n", WTERMSIG(status));  
-        }  
-    }  
+            }  
+            }  
 return 0;
 }
 
@@ -82,23 +84,23 @@ void create_file() {
      int fd = open("example.txt");  
     close(fd);  
     exit(0);  
-}  
+    }  
 
 void write_file() {  
      int fd = open("example.txt");  
     write(fd, "Bu bir test mesajıdır.\n", );  
     close(fd);  
     exit(0);  
-}  
+    }  
 
   void read_file() {  
-     char buffer[100];  
+     char buffer[20];  
      int fd = open("example.txt");  
      int n = read(fd, buffer, sizeof(buffer));  
     write(tekrar, buffer, n);  
     close(fd);  
     exit(0);  
-}  
+    }  
 int main() {  
     int pid, pid1, pid2;  
     pid = fork();  
