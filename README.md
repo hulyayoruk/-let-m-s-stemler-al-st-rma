@@ -27,7 +27,7 @@ if(pid<0){
           printf("çıkış durumu: %d \n", WEXItSTATUS(status));
           }
           }
-return 0;
+          return 0;
 }
 
  İKİNCİ ALIŞTIRMA:
