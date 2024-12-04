@@ -1,3 +1,5 @@
+BİRİNCİ ALIŞTIRMA:
+
 #include <studio.h>  
 #include <stdlib.h>  
 #include <sys/types.h>  
@@ -25,48 +27,47 @@ int main {
     return 0;  
 }
 
- İKİNCİ ALIŞTIRMA:
 
- 
-#include <studio.h>
+İKİNCİ ALIŞTIRMA:
+
+#include <studio.h>  
 #include <stdlib.h>  
 #include <sys/types.h>  
-#include <sys/wait.h> 
-#include <unistd.h>
+#include <sys/wait.h>   
+#include <unistd.h>  
 
-int main{
-     int pid;
-     pid=fork();
-     if(pid<0){
-             //error
-             }
-    if(pid==0){
-             //child
-      FILE *file = fopen("dosya.txt", "r");  
+int main {  
+    int pid;  
+    pid = fork();  
+    if (pid < 0) {  
+        //error  
+    }  
+    if (pid == 0) {  
+        //child  
+        FILE *file = fopen("dosya.txt", "r");  
         if (file == NULL) {  
             printf("Dosya açılamadı, abort() çağrılıyor.\n");  
-            abort(); 
-            } else {  
+            abort();   
+        } else {  
             printf("Dosya başarıyla açıldı.\n");  
             fclose(file);  
-            exit(0); 
-            }  
-            } 
-            else {  
+            exit(0);   
+        }  
+    } else {  
         int status;  
-        waitpid(pid, &status, 0);
+        waitpid(pid, &status, 0);  
         if (WIFEXITED(status)) {  
             printf("Child process, normal çıkış yaptı. Çıkış durumu: %d\n", WEXITSTATUS(status));  
-            } 
+        }   
         else (WIFSIGNALED(status)) {  
             printf("Child process, bir sinyal ile sonlandırıldı. Sinyal numarası: %d\n", WTERMSIG(status));  
-            }  
-            }  
-return 0;
+        }  
+    }  
+    return 0;  
 }
 
 
-  ÜÇÜNCÜ ALIŞTIRMA
+ ÜÇÜNCÜ ALIŞTIRMA
 
 #include <stdio.h>  
 #include <stdlib.h>  
