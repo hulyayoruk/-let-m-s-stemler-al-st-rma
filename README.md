@@ -99,29 +99,23 @@ void write_file() {
     close(fd);  
     exit(0);  
 }  
-
 int main() {  
-    pid_t pid1, pid2, pid3;  
-
-    pid1 = fork();  
+    int pid, pid1, pid2;  
+    pid = fork();  
     if (pid1 == 0) {  
         create_file();  
-    }  
-
-    pid2 = fork();  
+        }  
+    pid1 = fork();  
     if (pid2 == 0) {  
         write_file();  
-    }  
-
-    pid3 = fork();  
+        }  
+    pid2 = fork();  
     if (pid3 == 0) {  
         read_file();  
-    }  
-
+        }  
     wait(NULL);  
     wait(NULL);  
     wait(NULL);  
-
     return 0;  
 }
 
